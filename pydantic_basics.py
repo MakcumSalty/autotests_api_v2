@@ -60,7 +60,7 @@ course_default_model = CourseSchema(
         middleName="Alise"
     )
 )
-print('Course default model:', course_default_model)
+# print('Course default model:', course_default_model)
 
 # Инициализируем модель CourseSchema через распаковку словаря
 course_dict = {
@@ -87,9 +87,9 @@ course_dict = {
     }
 }
 course_dict_model = CourseSchema(**course_dict)
-print('Course dict model:', course_dict_model)
-print(course_dict_model.model_dump())
-print(course_dict_model.model_dump(by_alias=True))
+# print('Course dict model:', course_dict_model)
+# print(course_dict_model.model_dump())
+# print(course_dict_model.model_dump(by_alias=True))
 
 # Инициализируем модель CourseSchema через JSON
 course_json = """
@@ -116,16 +116,16 @@ course_json = """
 }
 """
 course_json_model = CourseSchema.model_validate_json(course_json)
-print('Course JSON model:', course_json_model)
+# print('Course JSON model:', course_json_model)
 
 # Инициализируем FileSchema c некорректным url
-try:
-    file = FileSchema(
-        id="file-id",
-        url="localhost",
-        filename="file.png",
-        directory="courses",
-    )
-except ValidationError as error:
-    print(error)
-    print(error.errors())
+# try:
+#     file = FileSchema(
+#         id="file-id",
+#         url="localhost",
+#         filename="file.png",
+#         directory="courses",
+#     )
+# except ValidationError as error:
+#     print(error)
+#     print(error.errors())
